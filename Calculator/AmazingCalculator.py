@@ -1,3 +1,5 @@
+from logo import logo
+
 # Add
 def add(n1, n2):
     return n1 + n2
@@ -27,11 +29,13 @@ operations = {
 
 
 def calculator():
-    num1 = int(input("Enter first number: "))
+    print(logo)
+
+    num1 = float(input("Enter first number: "))
     dummy = True # recursion icin sey
     while dummy:
         operation = input("choose an operation to do: ")
-        num2 = int(input("Enter the next number: "))
+        num2 = float(input("Enter the next number: "))
         function = operations[operation]
         answer = function(num1, num2)
 
@@ -41,7 +45,7 @@ def calculator():
             num1 = answer
         else:
             dummy = False
-            calculator()
+            calculator() # kendi kendini cagiriyoruz. recursion
 
 
 calculator()
