@@ -9,4 +9,4 @@ nr_numbers = int(input("How many numbers do you want in your password: "))
 nr_symbols = int(input("How many symbols do you want in your password: "))
 
 dummy = 0
-while dummy < nr_letters:
+#while dummy < nr_letters:
