@@ -25,20 +25,23 @@ operations = {
     "/": divide
 }
 
-num1 = int(input("Enter first number: "))
 
-for key in operations:
-    print(key)
-operation = input("choose an operation to do: ")
-num2 = int(input("Enter second number: "))
-function = operations[operation]
-answer_first = function(num1, num2)
+def calculator():
+    num1 = int(input("Enter first number: "))
+    dummy = True # recursion icin sey
+    while dummy:
+        operation = input("choose an operation to do: ")
+        num2 = int(input("Enter the next number: "))
+        function = operations[operation]
+        answer = function(num1, num2)
 
-print(f"{num1} {operation} {num2} = {answer_first}")
+        print(f"{num1} {operation} {num2} = {answer}")
+        bruh = input("type 'y' to continue, or type 'n' to start a new calculation: ")
+        if bruh == "y":
+            num1 = answer
+        else:
+            dummy = False
+            calculator()
 
-operation = input("choose another operation to do: ")
-num3 = int(input("Enter the number: "))
-function = operations[operation]
-answer_second = function(num3, answer_first)
 
-print(f"{answer_first} {operation} {num3} = {answer_second}")
+calculator()
