@@ -23,5 +23,5 @@ for attempt in range(dif, -1, -1):
     elif guess < number:
         print("You're too low")
     else:
-        print("You guessed right")
+        print(f"You guessed right. The answer was {number}")
         break
